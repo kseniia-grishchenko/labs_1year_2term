@@ -23,10 +23,10 @@ string get_file_path(const string& type) {
     getline(cin, s);
     if(s == ""){
         if(type == "input") {
-            return "in.txt";
+            return "../in.txt";
         }
         else
-            return "out.txt";
+            return "../out.txt";
     }
     return s;
 }
