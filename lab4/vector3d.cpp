@@ -38,8 +38,9 @@ double Vector3d::length() {
     return sqrt(x*x + y*y + z*z);
 }
 
-void Vector3d::print() {
-    std::cout << "X - " << x << " Y - " << y <<" Z - "<< z << std::endl;
+void Vector3d::print(std::stringstream& out) {
+    out << "This is Vector 3d :" << std::endl;
+    out << "X - " << x << " Y - " << y <<" Z - "<< z << std::endl;
 }
 
 bool Vector3d::normalize() {

@@ -35,8 +35,9 @@ double Vector2d::length() {
 }
 
 
-void Vector2d::print() {
-    std::cout << "X - " << x << " Y - " << y << std::endl;
+void Vector2d::print(std::stringstream& out) {
+    out << "This is Vector 2d :" << std::endl;
+    out << "X - " << x << " Y - " << y << std::endl;
 }
 
 bool Vector2d::check() {

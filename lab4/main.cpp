@@ -2,18 +2,27 @@
 #include "vector3d.h"
 #include "vector2d.h"
 
-using namespace std;
+#define CATCH_CONFIG_MAIN
+#include "../catch.hpp"
 
-int main() {
-    Vector3d vec{1, 2, 4};
-    Vector2d vector{4,3};
-    vector.print();
-    Vector2d::plus(vector, vector).print();
-    cout << Vector2d::compare(vector, vector) << endl;
-//    Vector2d::normalize(vector).print();
-    Vector3d(vector).print();
+#include <sstream>
 
-    //    Vector2d::right().print();
+TEST_CASE("Working with vector"){
+    Vector *vector = nullptr;
+    std::stringstream out;
 
-    return 0;
+    SECTION("Working with Vector 2d") {
+        vector = new Vector2d{};
+        vector->print(out);
+        REQUIRE(out.str() == "This is Vector 2d :\nX - 0 Y - 0\n" );
+    }
+
+    SECTION("Working with Vector 2d"){
+        vector = new Vector3d{};
+        vector->print(out);
+        REQUIRE(out.str() == "This is Vector 3d :\nX - 0 Y - 0 Z - 0\n" );
+    }
+
+
+
 }

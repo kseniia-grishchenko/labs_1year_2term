@@ -1,10 +1,12 @@
 #ifndef LAB4_VECTOR2D_H
 #define LAB4_VECTOR2D_H
 
+#include "vector.h"
+
 
 class Vector3d;
 
-class Vector2d {
+class Vector2d: public Vector {
 private:
     double x;
     double y;
@@ -18,9 +20,9 @@ public:
     double getY();
 
     bool check();
-    double length();
-    void print();
-    bool normalize();
+    double length() override ;
+    void print(std::stringstream& out) override ;
+    bool normalize() override;
     void turn(int angle);
 
     static Vector2d right();

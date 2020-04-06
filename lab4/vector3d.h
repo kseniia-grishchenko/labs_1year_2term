@@ -1,9 +1,12 @@
 #ifndef LAB4_VECTOR3D_H
 #define LAB4_VECTOR3D_H
 
+#include "vector.h"
+
 class Plate;
 class Vector2d;
-class Vector3d {
+
+class Vector3d: public Vector {
 private:
     double x;
     double y;
@@ -11,15 +14,15 @@ private:
 public:
     Vector3d();
     Vector3d(double x, double y,double z);
-    Vector3d(Vector2d a);
+    explicit Vector3d(Vector2d a);
 
     double getX();
     double getY();
     double getZ();
 
-    double length();
-    void print();
-    bool normalize();
+    double length() override ;
+    void print(std::stringstream& out) override ;
+    bool normalize() override ;
     bool plateCrossing(Plate plate);
     bool plateParallel(Plate plate);
 
